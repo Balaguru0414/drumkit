@@ -2,7 +2,9 @@
 // 	alert("i am click");
 // });
 
-// detecting button click
+
+
+// This a comment
 
 var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
@@ -14,6 +16,8 @@ function handleClick() {
 	var buttenInnerHTML = this.innerHTML;
 
 	makeSound(buttenInnerHTML);
+
+	buttonAnimation(buttenInnerHTML);
 	
 	}
 }
@@ -22,6 +26,7 @@ function handleClick() {
 
 document.addEventListener("keypress",function(event){
 	makeSound(event.key);
+	buttonAnimation(event.key);
 });
 
 function makeSound(key) {
@@ -66,6 +71,35 @@ function makeSound(key) {
 
 	}
 }
+
+function buttonAnimation(currentKey) {
+	
+	var activeButton = document.querySelector("."+currentKey);
+
+	activeButton.classList.add("pressed");
+
+	setTimeout(function () {
+		activeButton.classList.remove("pressed");
+	},100);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
